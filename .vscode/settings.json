@@ -1,0 +1,13 @@
+{
+    "githubIssues.createIssueTriggers": [
+        "TODO",
+        "todo",
+        "BUG",
+        "FIXME",
+        "ISSUE",
+        "HACK",
+        ""
+    ],
+    "php.suggest.basic": false,
+    "php.validate.enable": false
+}

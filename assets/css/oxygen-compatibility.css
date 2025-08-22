@@ -1,0 +1,249 @@
+/* ===== OXYGEN/BREAKDANCE COMPATIBILITY CSS ===== */
+
+/* WordPress Admin Bar Anpassung */
+body.admin-bar .header {
+    top: 32px !important;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar .header {
+        top: 46px !important;
+    }
+}
+
+/* Oxygen Builder Kompatibilität */
+.oxygen-body .header,
+.ct-builder .header {
+    position: relative !important; /* Im Builder relativ positionieren */
+    top: 0 !important;
+}
+
+/* Breakdance Builder Kompatibilität */
+.breakdance .header {
+    position: relative !important;
+    top: 0 !important;
+}
+
+/* WordPress Content Wrapper */
+.wp-content-wrapper {
+    min-height: calc(100vh - 140px);
+}
+
+/* Gutenberg Block Kompatibilität */
+.wp-block {
+    max-width: none; /* Entferne Gutenberg Standard-Breite */
+}
+
+/* Oxygen Section Overrides */
+.ct-section {
+    padding: 0 !important; /* Entferne Oxygen Standard-Padding */
+}
+
+.ct-div-block {
+    box-sizing: border-box;
+}
+
+/* Stelle sicher, dass Glasmorphismus-Effekte funktionieren */
+.ct-div-block .glass-button,
+.breakdance-element .glass-button {
+    background: rgba(7, 7, 7, 0.67) !important;
+    border: 1px solid rgba(215, 215, 215, 0.4) !important;
+    box-shadow: 0 8px 32px rgba(16, 16, 16, 0.2) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* CSS Custom Properties für Builder */
+:root {
+    /* Exportiere alle wichtigen CSS-Variablen für Builder-Zugriff */
+    --swoofle-primary: #f2f1f8;
+    --swoofle-secondary: #cececd;
+    --swoofle-text-primary: #1d1d1f;
+    --swoofle-text-secondary: #2b2b2b;
+    --swoofle-accent: #d3271b;
+    --swoofle-accent-orange: #d3271b;
+    --swoofle-radius-md: 12px;
+    --swoofle-radius-lg: 18px;
+    --swoofle-space-4: 1rem;
+    --swoofle-space-6: 1.5rem;
+    --swoofle-space-8: 2rem;
+    --swoofle-transition-normal: 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --swoofle-primary: #2c2c2c;
+    --swoofle-secondary: #5e5e5f;
+    --swoofle-text-primary: #f5f5f7;
+    --swoofle-text-secondary: #d8d8d9;
+    --swoofle-accent: #fa612a;
+}
+
+/* Builder-spezifische Klassen */
+.swoofle-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 var(--swoofle-space-6);
+}
+
+.swoofle-section {
+    padding: var(--swoofle-space-8) 0;
+}
+
+.swoofle-glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--swoofle-radius-lg);
+    padding: var(--swoofle-space-6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .swoofle-glass-card {
+    background: rgba(44, 44, 44, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Shortcode-Styling */
+.swoofle-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--swoofle-space-6);
+    margin: var(--swoofle-space-8) 0;
+}
+
+.swoofle-booking-embed {
+    background: var(--swoofle-primary);
+    border-radius: var(--swoofle-radius-lg);
+    padding: var(--swoofle-space-8);
+    margin: var(--swoofle-space-6) 0;
+}
+
+/* Responsive Anpassungen für Builder */
+@media (max-width: 768px) {
+    .swoofle-container {
+        padding: 0 var(--swoofle-space-4);
+    }
+    
+    .oxygen-body .ct-section,
+    .breakdance .bde-section {
+        padding: var(--swoofle-space-4) 0;
+    }
+}
+
+/* Oxygen Global Settings Override */
+.ct-section.swoofle-no-padding {
+    padding: 0 !important;
+}
+
+.ct-div-block.swoofle-full-width {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Breakdance Section Override */
+.bde-section.swoofle-no-padding {
+    padding: 0 !important;
+}
+
+/* Oxygen/Breakdance Button Styles */
+.ct-link-button.swoofle-glass-btn,
+.breakdance-button.swoofle-glass-btn {
+    background: rgba(7, 7, 7, 0.67) !important;
+    border: 1px solid rgba(215, 215, 215, 0.4) !important;
+    box-shadow: 0 8px 32px rgba(16, 16, 16, 0.2) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    color: white !important;
+    transition: all var(--swoofle-transition-normal) !important;
+}
+
+.ct-link-button.swoofle-glass-btn:hover,
+.breakdance-button.swoofle-glass-btn:hover {
+    background: rgba(247, 47, 33, 0.685) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 40px rgba(86, 86, 86, 0.2) !important;
+}
+
+/* Theme Toggle Integration für Builder */
+.ct-div-block .theme-toggle,
+.breakdance-element .theme-toggle {
+    background: none;
+    border: none;
+    padding: var(--swoofle-space-2);
+    border-radius: var(--swoofle-radius-sm);
+    cursor: pointer;
+    font-size: var(--text-lg);
+    color: var(--swoofle-text-secondary);
+    transition: all var(--swoofle-transition-normal);
+}
+
+.ct-div-block .theme-toggle:hover,
+.breakdance-element .theme-toggle:hover {
+    color: var(--swoofle-text-primary);
+    background: var(--swoofle-secondary);
+}
+
+/* Booking Modal Integration */
+.ct-modal.swoofle-booking-modal,
+.breakdance-modal.swoofle-booking-modal {
+    z-index: 10000 !important;
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .footer,
+    .ct-header,
+    .ct-footer,
+    .bde-header,
+    .bde-footer {
+        display: none !important;
+    }
+    
+    .ct-section,
+    .bde-section {
+        break-inside: avoid;
+    }
+}
+
+/* High Contrast Mode für Builder */
+@media (prefers-contrast: high) {
+    .ct-div-block,
+    .breakdance-element {
+        border: 1px solid currentColor;
+    }
+    
+    .swoofle-glass-card {
+        background: var(--swoofle-primary) !important;
+        backdrop-filter: none !important;
+        border: 2px solid var(--swoofle-accent) !important;
+    }
+}
+
+/* Reduced Motion für Builder */
+@media (prefers-reduced-motion: reduce) {
+    .ct-div-block *,
+    .breakdance-element * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* WordPress Editor Compatibility */
+.block-editor-page .swoofle-glass-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Oxygen Builder Preview Mode */
+.ct-builder-preview .swoofle-glass-card {
+    backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Breakdance Builder Preview Mode */
+.breakdance-builder-preview .swoofle-glass-card {
+    backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+}
